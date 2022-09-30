@@ -26,7 +26,7 @@ def dataset_to_list_points(dir_dataset):
     points = list()
     with open(dir_dataset, 'rt') as reader:
         for point in reader:
-            points.append(Point(np.asarray(map(float, point.split("::")))))
+            points.append(Point(np.asarray(list(map(float, point.split("::"))))))
     return points
 
 
@@ -119,3 +119,4 @@ def k_means(dataset, num_clusters, iterations):
 if __name__ == '__main__':
     #k_means(DATASET1, NUM_CLUSTERS, ITERATIONS)
     k_means(DATASET1, 3, ITERATIONS)
+    
